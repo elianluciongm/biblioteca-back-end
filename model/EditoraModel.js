@@ -1,0 +1,30 @@
+import { DataTypes } from "sequelize";
+import banco from "../banco.js";
+
+//Mapeamento da model editora
+export default banco.define(
+    'editora',
+    {
+      ideditora: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+      },
+
+      nomeeditora: {
+      type: DataTypes.STRING(60),
+      allowNull: false
+      },
+
+      cnpj: {
+      type: DataTypes.STRING,
+      allowNull: false
+      },
+
+      endereco: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      }
+    }
+  );
