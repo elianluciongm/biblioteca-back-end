@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import banco from "./banco.js";
 import editora from "./controller/EditoraController.js";
@@ -17,6 +18,8 @@ try {
 
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 
 app.get('/teste', (req, res) => {
     res.send('Teste ok.');
@@ -73,6 +76,6 @@ app.post('/funcionario', funcionario.senha);
 app.post('/funcionario', funcionario.demitir);
 app.put('/funcionario/:id', funcionario.alterar);
 
-app.listen(3000, () => { console.log(`Servidor rodando.`) });
+app.listen(4000, () => { console.log(`Servidor rodando.`) });
 
 
